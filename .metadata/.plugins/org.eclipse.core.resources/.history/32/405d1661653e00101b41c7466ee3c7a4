@@ -1,0 +1,50 @@
+package model;
+
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
+@Entity
+@Table (name="estudiantes")
+@NamedQuery(name="Estudiante.findAll", query="SELECT e FROM Estudiantes e")
+
+public class Estudiante implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int idEst;
+	private String carrera;
+	private String nombreApe;
+	private String nroDocumento;
+	private String telefono;
+	private String tipoDocumento;
+	
+	public Estudiante () {
+		 
+	}
+	
+	public int getIdEst() {
+		return this.idEst;
+	}
+	
+	public void setIdEst(int idEst) {
+		this.idEst = idEst;
+	}
+	
+	public String getnombreApe() {
+		return this.nombreApe;
+	}
+	
+	public void setIdEst(String nombreApe) {
+		this.nombreApe = nombreApe;
+	}
+	
+	
+}
